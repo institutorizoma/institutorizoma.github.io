@@ -16,7 +16,7 @@ module.exports = {
         primaryText: "#2b4031", // Define your main font color
         //secondaryText: "#aa55ff", // Slightly lighter text
         //heading: "#eee000", // Heading color
-        background: "#f1e8d6",
+        background: "#ede2d0",
       },
     },
   },

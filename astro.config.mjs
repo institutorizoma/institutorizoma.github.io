@@ -6,6 +6,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://institutorizoma.github.io",
+  site: "https://institutorizoma.com.br",
   integrations: [tailwind(), mdx(), sitemap(), icon()],
 });
