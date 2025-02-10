@@ -13,10 +13,10 @@ module.exports = {
         ],
       },
       colors: {
-        primaryText: "#2b4031", // Define your main font color
-        //secondaryText: "#aa55ff", // Slightly lighter text
-        //heading: "#eee000", // Heading color
-        background: "#ede2d0",
+        primaryText: "#1e3322",
+        background: "#dcd5bb",
+        'rizoma-bege' : "#fff6e7",
+        'rizoma-green': '#1e3322',
       },
     },
   },

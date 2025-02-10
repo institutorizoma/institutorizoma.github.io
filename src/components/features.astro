@@ -4,51 +4,50 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Medicina da Família Abrangente",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Nossos médicos da família oferecem cuidado primário completo, desde prevenção e acompanhamento de rotina até o diagnóstico e tratamento de diversas condições.  Priorizamos a construção de um relacionamento médico-paciente duradouro, com foco na sua saúde integral.",
+    icon: "bx:bxs-heart", // Example icon - choose a relevant one
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Psiquiatria Personalizada",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Nossos psiquiatras realizam avaliações completas para identificar e tratar transtornos mentais, oferecendo acompanhamento medicamentoso individualizado e terapias.  Nosso objetivo é promover a saúde mental e o bem-estar emocional de cada paciente.",
+    icon: "bx:bxs-brain", // Example icon
   },
   {
-    title: "On-Demand Components",
+    title: "Psicologia Acolhedora",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "Nossos psicólogos oferecem terapias individuais, de casal e em grupo,  em um ambiente acolhedor e seguro.  Auxiliamos você a lidar com questões emocionais, comportamentais e de relacionamento, buscando o autoconhecimento e o desenvolvimento pessoal.",
+    icon: "bx:bxs-happy-alt", // Example icon
+  },
+    {
+    title: "Promoção da Saúde Integral",
+    description:
+      "No Instituto Rizoma, a saúde é vista de forma integral.  Além do tratamento, focamos na promoção da saúde e prevenção de doenças, através de orientações personalizadas e acompanhamento contínuo.  Queremos te ajudar a viver uma vida mais saudável e equilibrada.",
+    icon: "bx:bxs-plus-circle", // Example icon
   },
   {
-    title: "Broad Integration",
+    title: "Equipe Multidisciplinar Integrada",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "Nossa equipe é formada por médicos, psiquiatras e psicólogos que trabalham de forma integrada e colaborativa.  Essa abordagem multidisciplinar garante um cuidado completo e abrangente, considerando todas as dimensões da sua saúde.",
+    icon: "bx:bxs-group", // Example icon
   },
   {
-    title: "SEO Enabled",
+    title: "Atendimento Humanizado e Personalizado",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Acreditamos que cada paciente é único e merece um atendimento individualizado e humanizado.  Nossa equipe se dedica a construir uma relação de confiança com você, oferecendo um cuidado atencioso e personalizado que atenda às suas necessidades específicas.",
+    icon: "bx:bxs-hand", // Example icon
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Nossos Serviços
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    Conheça as especialidades e serviços oferecidos pelo Instituto Rizoma de Saúde Integral.
   </p>
 </div>
 
@@ -56,12 +55,12 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-rizoma-green rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white bg-rizoma-green" name={item.icon} />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <p class="text-slate-900 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
     ))
