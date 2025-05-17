@@ -4,6 +4,11 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import AnaCarolinaImg from "assets/ana-carolina.png";
+import JoaoImg from "assets/joao.png";
+import KamilaImg from "assets/kamila.png";
+import KarolinaImg from "assets/karolina.png";
+import LaraImg from "assets/lara.png";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -15,46 +20,36 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   <Container>
     <Sectionhead>
       <Fragment slot="title">Sobre nós</Fragment>
-      <Fragment slot="desc">Nosso compromisso é com você.</Fragment>
+      <Fragment slot="desc">Acolhimento e cuidado para cada fase da sua jornada.</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Instituto Rizoma: Cuidado Completo para o seu Bem-Estar
-      </h2>
       <p class="text-lg leading-relaxed text-slate-800">
-        No Instituto Rizoma de Saúde Integral, compreendemos que a saúde é um estado de equilíbrio dinâmico, influenciado por fatores físicos, mentais, emocionais e sociais. Por isso, reunimos as especialidades de <strong>medicina da família, psiquiatria e psicologia</strong>, oferecendo um <strong>cuidado integral e personalizado</strong> que se adapta às necessidades individuais de cada paciente.
+        O <strong>Instituto Rizoma de Saúde Integral</strong> é um espaço dedicado ao acolhimento e cuidado em saúde mental, com foco em
+         um atendimento ético, multidisciplinar, qualificado e baseado em evidências científicas, artísticas e filosóficas.  
+        </p>
+      <p class="text-lg leading-relaxed text-slate-800">
+        Acreditamos na importância de integrar diferentes saberes para proporcionar um cuidado realmente abrangente e
+        ajustado às necessidades de cada pessoa.       </p>
+      <p class="text-lg leading-relaxed text-slate-800">
+        Para isso, contamos com uma rede de profissionais especializados e com experiências diversas que articulam
+        suas práticas em prol de uma visão integral do ser humano. 
       </p>
       <p class="text-lg leading-relaxed text-slate-800">
-        Nossa <strong>equipe multidisciplinar</strong> é formada por profissionais experientes e dedicados, que trabalham em conjunto para proporcionar um <strong>tratamento completo e abrangente</strong>. Acreditamos na importância de construir uma relação de confiança com cada paciente, estabelecendo um espaço de acolhimento e escuta atenta.
-      </p>
-      <p class="text-lg leading-relaxed text-slate-800">
-        Buscamos ir além do tratamento de doenças, priorizando a <strong>promoção da saúde e a prevenção de problemas</strong>. Nosso objetivo é oferecer um <strong>cuidado humanizado</strong>, que considere as particularidades de cada indivíduo e o ajude a alcançar o bem-estar global.
-      </p>
-      <p class="text-lg leading-relaxed text-slate-800">
-        Oferecemos uma gama de serviços que incluem:
-      </p>
-      <ul class="list-disc ml-6 text-lg leading-relaxed text-slate-800">
-        <li><strong>Consultas médicas:</strong> avaliação completa da saúde, diagnóstico e tratamento de doenças, acompanhamento e prevenção.</li>
-        <li><strong>Acompanhamento psiquiátrico:</strong> avaliação e tratamento de transtornos mentais, acompanhamento medicamentoso e terapias.</li>
-        <li><strong>Atendimento psicológico:</strong> terapias individuais, de casal e em grupo, para lidar com questões emocionais e comportamentais.</li>
-      </ul>
-      <p class="text-lg leading-relaxed text-slate-800">
-        Convidamos você a conhecer nossa equipe e descobrir como podemos te ajudar a cuidar da sua saúde integral.
+        Nossa equipe multidisciplinar é composta por profissionais de psicologia, psiquiatria, medicina de família e
+        outras especialidades parceiras que trabalham de forma conjunta para garantir o cuidado atento, constante e humanizado. 
+
       </p>
       <h2 class="font-bold text-3xl text-gray-800 mt-8">
         Nossa equipe
       </h2>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-   
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
             <div class="w-full aspect-square">
               <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
+                src={AnaCarolinaImg}
+                alt="Ana Carolina Simão"
                 sizes="(max-width: 800px) 100vw, 400px"
                 width={400}
                 height={400}
@@ -63,14 +58,92 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
+              <h2 class="text-lg text-gray-800">Ana Carolina Simão</h2>
               <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
+                Psicóloga
               </h3>
             </div>
           </div>
-        ))
-      }
+
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={JoaoImg}
+                alt="Dr. João Paulo Zerbinati"
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">Dr. João Paulo Zerbinati</h2>
+              <h3 class="text-sm text-slate-500">
+                Psicólogo
+              </h3>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={KamilaImg}
+                alt="Dra. Kamila Baruque Bignotto"
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">Dra. Kamila Baruque Bignotto
+              </h2>
+              <h3 class="text-sm text-slate-500">
+                Médica Psiquiatra
+              </h3>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={KarolinaImg}
+                alt="Karoline Bignotto"
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">Karoline Bignotto</h2>
+              <h3 class="text-sm text-slate-500">
+              Médica de Família
+              </h3>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={LaraImg}
+                alt="Lara de Sousa Blanes"
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">Lara Sousa Blanes</h2>
+              </h2>
+              <h3 class="text-sm text-slate-500">
+                Psicóloga
+              </h3>
+            </div>
+          </div>
     </div>
   </Container>
 </Layout>
