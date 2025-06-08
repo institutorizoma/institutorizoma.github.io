@@ -1,6 +1,8 @@
 ---
 import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
+import { Picture } from "astro:assets";
+import heroImage from "assets/rizoma.png";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
@@ -15,11 +17,7 @@ import { Icon } from "astro-icon/components";
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contate o Instituto Rizoma</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
-        </p>
+        <h2 class="font-medium text-2xl text-gray-800">Agende uma consulta ou tire suas dúvidas com nossa equipe.</h2>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
@@ -29,16 +27,23 @@ import { Icon } from "astro-icon/components";
               href="mailto:hello@astroshipstarter.com"
               >institutorizomasi@gmail.com</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+55 11 97572 2701">(11) 97572 2701</a
-            >
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" />
+            <a href="tel:+55 19 992194683">(19) 99219 4683</a>
+            <a href="https://wa.me/5519992194683" target="_blank"
+            class="bg-rizoma-green flex gap-1 items-center justify-center p-1 rounded text-white font-medium"
+                rel="noopener noreferrer">
+                <Icon class="text-white w-5 h-5" name="bx:bxl-whatsapp" />
+                 </a>
           </div>
         </div>
       </div>
+      <!--
       <div>
         <Contactform />
       </div>
+       -->
     </div>
   </Container>
 </Layout>

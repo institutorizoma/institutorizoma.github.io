@@ -14,7 +14,8 @@ module.exports = {
       },
       colors: {
         primaryText: "#1e3322",
-        background: "#dcd5bb",
+        background: "#ffffff",
+//        background: "#dcd5bb",
         'rizoma-bege' : "#fff6e7",
         'rizoma-green': '#1e3322',
       },

@@ -1,13 +1,13 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/rizoma.jpg";
+import heroImage from "assets/rizoma.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-6 md:order-1">
     <Picture
       src={heroImage}
       alt="Instituto Rizoma de Saúde Integral"
@@ -19,8 +19,8 @@ import { Icon } from "astro-icon/components";
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Instituto Rizoma de Saúde Integral
+      class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Descubra uma nova dimensão de cuidados em saúde mental.
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
       O Instituto Rizoma de Saúde Integral une ciência, arte, cuidado e humanidade para apoiar cada pessoa em 
@@ -32,13 +32,12 @@ import { Icon } from "astro-icon/components";
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="#"
+        href="https://wa.me/5519992194683"
         target="_blank"
-        class="bg-rizoma-green flex gap-1 items-center justify-center"
-        rel="noopener">
+        class="bg-rizoma-green flex gap-1 items-center justify-center px-4 py-2 rounded text-white font-medium"
+        rel="noopener noreferrer">
         <Icon class="text-white w-5 h-5" name="bx:bxl-whatsapp" />
-
-         Fale com a gente
+        Fale com a gente
       </Link>
     </div>
   </div>
