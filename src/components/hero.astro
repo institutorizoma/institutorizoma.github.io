@@ -1,13 +1,13 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/rizoma.png";
+import heroImage from "assets/rizoma-logo.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1">
+  <div class="py-6 md:order-1 order-2">
     <Picture
       src={heroImage}
       alt="Instituto Rizoma de Saúde Integral"
@@ -15,30 +15,39 @@ import { Icon } from "astro-icon/components";
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       format="avif"
+      class="hidden md:block"
     />
-  </div>
-  <div>
-    <h1
-      class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Descubra uma nova dimensão de cuidados em saúde mental.
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      O Instituto Rizoma de Saúde Integral une ciência, arte, cuidado e humanidade para apoiar cada pessoa em 
-      sua jornada de saúde e qualidade de vida. 
-<br />
-      Nosso diferencial está na oferta de um cuidado adaptado às necessidades de cada pessoa, com intervenções 
-      que se entrelaçam de maneira articulada. Aqui, os cuidados não são meramente ramificados, mas integrados,
-       ou seja, compõem uma rede viva e coerente de apoio à saúde integral.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <div class="flex justify-center mt-4">
       <Link
         href="https://wa.me/5519992194683"
         target="_blank"
-        class="bg-rizoma-green flex gap-1 items-center justify-center px-4 py-2 rounded text-white font-medium"
+        class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors"
         rel="noopener noreferrer">
         <Icon class="text-white w-5 h-5" name="bx:bxl-whatsapp" />
         Fale com a gente
       </Link>
+    </div>
+  </div>
+  <div class="relative">
+    <div class="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat opacity-30" style="background-image: url('/src/assets/rizoma-logo.png');"></div>
+    <div class="absolute inset-0 bg-white/60 md:hidden"></div>
+    <div class="relative z-10">
+      <div class="mb-4 inline-block bg-transparent text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
+        ATENDIMENTO ONLINE E PRESENCIAL
+      </div>
+      <h1
+        class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
+        Descubra uma nova dimensão de cuidados em saúde mental
+      </h1>
+      <p class="text-lg mt-4 text-slate-600 max-w-xl">
+        No <span class="font-semibold">Instituto Rizoma de Saúde Integral</span> unimos ciência,
+        arte, cuidado e humanidade para te apoiar em sua jornada de saúde e qualidade de vida.
+<br />
+<br />
+        Oferecemos cuidado integrado com atendimento em <span class="font-bold" style="color: #95866f;">Psicologia</span>, <span class="font-bold" style="color: #95866f;">Psiquiatria</span> e <span class="font-bold" style="color: #95866f;">Medicina de Família</span>.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      </div>
     </div>
   </div>
 </main>
