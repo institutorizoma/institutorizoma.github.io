@@ -18,6 +18,7 @@ module.exports = {
 //        background: "#dcd5bb",
         'rizoma-bege' : "#fff6e7",
         'rizoma-green': '#1e3322',
+        'rizoma-green-lighter': '#618e81',
       },
     },
   },

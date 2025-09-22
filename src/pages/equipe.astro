@@ -4,6 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
 import AnaCarolinaImg from "assets/ana-carolina.png";
 import JoaoImg from "assets/joao.png";
 import KamilaImg from "assets/kamila.png";
@@ -23,7 +24,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <Fragment slot="desc">Conheça os profissionais do Instituto Rizoma.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-[2fr_3fr] gap-10 mx-auto max-w-4xl mt-12">
+    <div class="grid md:grid-cols-[2fr_3fr] gap-10 mx-auto max-w-4xl mt-8">
           <div class="group flex items-center" id="ana-carolina">
             <div class="w-full aspect-square">
               <Picture
@@ -172,7 +173,8 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
 
           <div class="group">
-            <p class="text-3xl font-bold text-gray-800">Lara Sousa Blanes</p>
+            <p class="text-3xl font-bold text-gray-800">Lara Sousa Blanes
+            </p>
             <p class="text-md leading-relaxed text-slate-800">
              <strong>Psicóloga</strong> (CRP 06/120257).
             </p>

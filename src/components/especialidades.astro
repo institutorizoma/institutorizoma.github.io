@@ -1,8 +1,9 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import Container from "@components/container.astro";
 
-const features = [
+const especialidades = [
   {
     title: "Medicina da Família Abrangente",
     description:
@@ -42,7 +43,9 @@ const features = [
 ];
 ---
 
-<div class="mt-16 md:mt-0">
+<Container>
+<div id="especialidades" class="my-16">
+<div>
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Especialidades
   </h2>
@@ -59,7 +62,7 @@ const features = [
 
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
-    features.map((item) => (
+    especialidades.map((item) => (
       <div class="flex gap-4 items-start">
         <div class="mt-1 bg-rizoma-green rounded-full  p-2 w-8 h-8 shrink-0">
           <Icon class="text-white bg-rizoma-green" name={item.icon} />
@@ -72,3 +75,5 @@ const features = [
     ))
   }
 </div>
+</div>
+</Container>

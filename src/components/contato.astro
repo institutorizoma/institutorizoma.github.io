@@ -1,0 +1,43 @@
+---
+import Container from "@components/container.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div id="contato" class="w-full py-16 bg-rizoma-green-lighter">
+  <Container>
+    <div>
+      <div>
+        <h2 class="font-medium text-3xl text-white mt-8 text-center">Agende uma consulta ou tire suas dúvidas com nossa equipe.</h2>
+        <p class="text-lg mt-4 text-yellow text-center">
+          Estamos aqui pra te ajudar.
+        </p>
+        <div class="flex justify-center mt-6">
+          <a href="https://wa.me/5519992194683" target="_blank"
+            class="text-lg bg-green-500 hover:bg-green-600 flex gap-1 items-center justify-center p-3 rounded-full text-white font-medium transition-colors"
+                rel="noopener noreferrer">
+                AGENDAR SESSÃO<Icon class="text-white w-6 h-6" name="bx:bxl-whatsapp" />
+          </a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 mt-8 max-w-2xl mx-auto">
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">Contato</h3>
+            <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
+              <Icon class="text-white/70 w-4 h-4" name="uil:envelope" />
+              <a href="mailto:institutorizomasi@gmail.com">institutorizomasi@gmail.com</a>
+            </div>
+            <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
+              <Icon class="text-white/70 w-4 h-4" name="uil:phone" />
+              <a href="tel:+55 19 992194683">(19) 99219 4683</a>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">Endereço</h3>
+            <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
+              <span>R. Maria Ferreira Antunes, 16<br>Barão Geraldo - Campinas, SP<br>CEP: 13084-180</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>
