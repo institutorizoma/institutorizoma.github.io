@@ -2,7 +2,7 @@
 // @ts-ignore
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
-import rizomaLogo from "assets/rizoma-logo.png";
+import rizomaLogo from "assets/rizoma-logo-transparent.png";
 
 const especialidades = [
   {
@@ -44,7 +44,7 @@ const especialidades = [
 ];
 ---
 
-<div id="especialidades" class="w-full py-20 relative overflow-hidden">
+<div id="especialidades" class="w-full py-20 relative overflow-hidden" style="background-color: #ffffff; position: relative; z-index: 10;">
   <!-- Background logo - only right half visible -->
   <div
     class="absolute left-0 top-0 h-full w-1/2 bg-no-repeat bg-contain opacity-15 pointer-events-none bg-logo"

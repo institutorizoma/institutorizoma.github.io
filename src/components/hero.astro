@@ -1,15 +1,26 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/rizoma-logo.png";
+import heroImage from "assets/rizoma-logo-transparent.png";
+import sunsetImage from "assets/sunset.jpg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
 ---
 
+<!-- Sunset background image - full width extending below -->
+<div
+  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-60 pointer-events-none"
+  style={`background-image: url(${sunsetImage.src}); height: 100vh; top: 0;`}
+></div>
+
+<!-- Content overlay - full width extending below -->
+<div class="fixed inset-0 bg-white/20 pointer-events-none" style="height: 100vh; top: 0;"></div>
+
 <Container>
 <main
-  class="grid lg:grid-cols-2 place-items-center min-h-screen pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 order-2">
+  class="grid lg:grid-cols-2 place-items-center min-h-screen pt-16 pb-0 md:pt-12 md:pb-0 relative z-10">
+
+  <div class="py-6 md:order-1 order-2 relative z-10">
     <Picture
       src={heroImage}
       alt="Instituto Rizoma de Saúde Integral - Logotipo representando cuidado multidisciplinar em saúde mental"
@@ -31,22 +42,44 @@ import Container from "@components/container.astro";
     </div>
   </div>
   <div class="relative">
-    <div class="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat opacity-30" style="background-image: url('/src/assets/rizoma-logo.png');"></div>
-    <div class="absolute inset-0 bg-white/60 md:hidden"></div>
     <div class="relative z-10">
-      <div class="mb-4 inline-block bg-transparent text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
+      <div class="mb-4 inline-block bg-white text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
         ATENDIMENTO ONLINE E PRESENCIAL
       </div>
       <h1
         class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
         Descubra uma nova dimensão de cuidados em saúde mental
       </h1>
-      <p class="text-lg md:text-2xl mt-4 text-slate-600 max-w-xl">
+      <p class="text-lg md:text-2xl mt-4 text-slate-900 max-w-xl">
         No <span class="font-semibold">Instituto Rizoma de Saúde Integral</span> unimos ciência,
         arte, cuidado e humanidade para te apoiar em sua jornada de saúde e qualidade de vida.
 <br />
 <br />
-        Oferecemos cuidado integrado com atendimento em <span class="font-bold" style="color: #95866f;">Psicologia</span>, <span class="font-bold" style="color: #95866f;">Psiquiatria</span> e <span class="font-bold" style="color: #95866f;">Medicina de Família</span>.
+        Oferecemos atendimento integrado em:
+        </p>
+        <div class="flex justify-center">
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-4">
+            <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+              <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+            </div>
+            <span class="font-bold text-2xl text-rizoma-green">Psicologia</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+              </div>
+              <span class="font-bold text-2xl text-rizoma-green">Psiquiatria</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+              </div>
+              <span class="font-bold text-2xl text-rizoma-green">Medicina de Família</span>
+            </li>
+          </ul>
+        </div>
+        <p class="text-lg md:text-2xl mt-4 text-slate-900 max-w-xl" style="display: none;">
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
       </div>
