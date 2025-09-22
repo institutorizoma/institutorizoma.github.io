@@ -1,16 +1,16 @@
 ---
 import { Picture } from "astro:assets";
 import heroImage from "assets/rizoma-logo-transparent.png";
-import sunsetImage from "assets/sunset.jpg";
+import waterImage from "assets/water.webp";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
 ---
 
-<!-- Sunset background image - full width extending below -->
+<!-- Water background image - full width extending below -->
 <div
-  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-60 pointer-events-none"
-  style={`background-image: url(${sunsetImage.src}); height: 100vh; top: 0;`}
+  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none"
+  style={`background-image: url(${waterImage.src}); height: 100vh; top: 0;`}
 ></div>
 
 <!-- Content overlay - full width extending below -->
