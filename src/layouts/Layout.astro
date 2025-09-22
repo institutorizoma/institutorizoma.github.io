@@ -27,7 +27,7 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -35,27 +35,99 @@ const makeTitle = title
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <meta name="description" content="Instituto Rizoma de Saúde Integral oferece cuidado multidisciplinar em saúde mental com psicologia, psiquiatria e medicina de família em Campinas. Atendimento humanizado e personalizado." />
+    <meta name="keywords" content="psicologia campinas, psiquiatria campinas, medicina família campinas, saúde mental, terapia, atendimento psicológico, instituto rizoma" />
+    <meta name="author" content="Instituto Rizoma de Saúde Integral" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#b8c1a1" />
+    <link rel="canonical" href={canonicalURL} />
+
     <SEO
       title={makeTitle}
-      description="Instituto Rizoma de Saúde Integral"
+      description="Instituto Rizoma de Saúde Integral oferece cuidado multidisciplinar em saúde mental com psicologia, psiquiatria e medicina de família em Campinas. Atendimento humanizado e personalizado."
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Instituto Rizoma de Saúde Integral`,
+          title: makeTitle,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Instituto Rizoma de Saúde Integral",
+          alt: "Instituto Rizoma de Saúde Integral - Cuidado multidisciplinar em saúde mental",
         },
+        optional: {
+          description: "Instituto Rizoma oferece atendimento em psicologia, psiquiatria e medicina de família com foco no cuidado humanizado e personalizado em Campinas, SP.",
+          locale: "pt_BR",
+          siteName: "Instituto Rizoma de Saúde Integral"
+        }
       }}
     />
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Instituto Rizoma de Saúde Integral",
+      "description": "Instituto de saúde mental oferecendo cuidado multidisciplinar com psicologia, psiquiatria e medicina de família",
+      "url": "https://institutorizoma.github.io",
+      "logo": "https://institutorizoma.github.io/src/assets/rizoma-horizontal.png",
+      "image": "https://institutorizoma.github.io/src/assets/rizoma-logo.png",
+      "telephone": "+55-19-99219-4683",
+      "email": "institutorizomasi@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Maria Ferreira Antunes, 16",
+        "addressLocality": "Campinas",
+        "addressRegion": "SP",
+        "postalCode": "13084-180",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-22.8649",
+        "longitude": "-47.0739"
+      },
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "medicalSpecialty": [
+        "Psychology",
+        "Psychiatry",
+        "Family Medicine"
+      ],
+      "serviceArea": {
+        "@type": "City",
+        "name": "Campinas"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Saúde Mental",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "Psicoterapia Individual"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "Avaliação Psiquiátrica"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "Medicina de Família"
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body class="text-primaryText bg-background pt-20">
     <Navbar />
