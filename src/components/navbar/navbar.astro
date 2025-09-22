@@ -3,6 +3,7 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import rizomaHorizontalLogo from "assets/rizoma-horizontal.png";
 
 const menuitems = [
 
@@ -49,7 +50,7 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">
-          <img src="/src/assets/rizoma-horizontal.png" alt="Instituto Rizoma de Saúde Integral - Logotipo" class="h-12" />
+          <img src={rizomaHorizontalLogo.src} alt="Instituto Rizoma de Saúde Integral - Logotipo" class="h-12" />
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
