@@ -1,9 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
+import { SITE_CONFIG, whatsappHelpers } from "@/config";
+
+export interface Props {
+  message?: string;
+  phone?: string;
+}
+
+const { message, phone } = Astro.props;
+
+// Build WhatsApp URL using centralized helper
+const whatsappUrl = whatsappHelpers.getWhatsappUrl(message, phone);
 ---
 
 <a
-  href="https://wa.me/5519996395866"
+  href={whatsappUrl}
   target="_blank"
   rel="noopener noreferrer"
   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 z-50 animate-pulse hover:animate-none"

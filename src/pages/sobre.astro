@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -9,11 +8,6 @@ import JoaoImg from "assets/joao.png";
 import KamilaImg from "assets/kamila.png";
 import KarolinaImg from "assets/karolina.png";
 import LaraImg from "assets/lara.png";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
 ---
 
 <Layout title="Sobre nós">

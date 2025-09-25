@@ -5,11 +5,12 @@ import waterImage from "assets/water.webp";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
+import { whatsappHelpers } from "@/config";
 ---
 
 <!-- Water background image - full width extending below -->
 <div
-  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-30 pointer-events-none"
+  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-40 pointer-events-none"
   style={`background-image: url(${waterImage.src}); height: 100vh; top: 0;`}
 ></div>
 
@@ -32,7 +33,7 @@ import Container from "@components/container.astro";
     />
     <div class="flex justify-center mt-4">
       <Link
-        href="https://wa.me/5519996395866"
+        href={whatsappHelpers.getDefaultWhatsappUrl()}
         target="_blank"
         class="bg-rizoma-green-lighter hover:bg-green-500 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors"
         rel="noopener noreferrer">
@@ -70,6 +71,12 @@ import Container from "@components/container.astro";
                 <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
               </div>
               <span class="font-bold text-2xl text-rizoma-green">Psiquiatria</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+              </div>
+              <span class="font-bold text-2xl text-rizoma-green">Grupos Terapêuticos</span>
             </li>
             <li class="flex items-center gap-4">
               <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">

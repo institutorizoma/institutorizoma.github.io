@@ -1,0 +1,189 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import WhatsappFloat from "@components/whatsapp-float.astro";
+import "@fontsource-variable/inter/index.css";
+import '@fontsource-variable/bricolage-grotesque';
+
+export interface Props {
+  title: string;
+  description?: string;
+  professional: {
+    name: string;
+    title: string;
+    credentials: string;
+    specialties: string[];
+    image?: string;
+    whatsappMessage?: string;
+  };
+  keywords?: string[];
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title, description, professional, keywords = [] } = Astro.props;
+
+const makeTitle = title + " | " + "Instituto Rizoma";
+
+// SEO-optimized description
+const seoDescription = description ||
+  `${professional.name} - ${professional.title} ${professional.credentials}. ${professional.specialties.join(", ")} em Campinas. Agende sua consulta no Instituto Rizoma de Saúde Integral.`;
+
+// SEO keywords combining professional info with general terms
+const seoKeywords = [
+  professional.name.toLowerCase().replace(/\s+/g, " "),
+  professional.title.toLowerCase(),
+  ...professional.specialties.map(s => s.toLowerCase()),
+  "campinas",
+  "barao geraldo",
+  "terapia campinas",
+  "saude mental",
+  "instituto rizoma",
+  ...keywords
+].join(", ");
+
+// Structured data for the professional
+const professionalStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": professional.name,
+  "jobTitle": professional.title,
+  "description": seoDescription,
+  "url": canonicalURL,
+  "image": professional.image ? new URL(professional.image, Astro.site).toString() : resolvedImageWithDomain,
+  "telephone": "+55-19-99639-5866",
+  "email": "institutorizomasi@gmail.com",
+  "worksFor": {
+    "@type": "MedicalOrganization",
+    "name": "Instituto Rizoma de Saúde Integral",
+    "url": "https://institutorizoma.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Maria Ferreira Antunes, 26",
+      "addressLocality": "Campinas",
+      "addressRegion": "SP",
+      "postalCode": "13084-180",
+      "addressCountry": "BR"
+    }
+  },
+  "speciality": professional.specialties,
+  "areaServed": {
+    "@type": "City",
+    "name": "Campinas"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": `Serviços de ${professional.title}`,
+    "itemListElement": professional.specialties.map(specialty => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "MedicalTherapy",
+        "name": specialty
+      }
+    }))
+  }
+};
+
+// Breadcrumb structured data
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Instituto Rizoma",
+      "item": "https://institutorizoma.com.br"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Profissionais",
+      "item": "https://institutorizoma.com.br/#equipe"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": professional.name,
+      "item": canonicalURL
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="google-site-verification" content="4qA71ymVmyT2jw_p_kmKyzA7xJYQoEflHMH1NpfSaB0" />
+
+    <meta name="description" content={seoDescription} />
+    <meta name="keywords" content={seoKeywords} />
+    <meta name="author" content="Instituto Rizoma de Saúde Integral" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#b8c1a1" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Additional professional-specific meta tags -->
+    <meta property="profile:first_name" content={professional.name.split(' ')[0]} />
+    <meta property="profile:last_name" content={professional.name.split(' ').slice(-1)[0]} />
+    <meta name="citation_author" content={professional.name} />
+    <meta name="DC.creator" content={professional.name} />
+
+    <SEO
+      title={makeTitle}
+      description={seoDescription}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "profile",
+          title: makeTitle,
+          image: professional.image ? new URL(professional.image, Astro.site).toString() : resolvedImageWithDomain,
+        },
+        image: {
+          alt: `${professional.name} - ${professional.title} no Instituto Rizoma de Saúde Integral`,
+        },
+        optional: {
+          description: seoDescription,
+          locale: "pt_BR",
+          siteName: "Instituto Rizoma de Saúde Integral"
+        }
+      }}
+    />
+
+    <!-- Professional Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(professionalStructuredData)} />
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbStructuredData)} />
+  </head>
+  <body class="text-primaryText bg-background pt-20">
+    <Navbar />
+    <slot />
+    <Footer />
+    <WhatsappFloat
+      message={professional.whatsappMessage}
+      phone={professional.phone}
+    />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

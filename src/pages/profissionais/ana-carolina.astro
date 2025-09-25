@@ -1,21 +1,55 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
-import Layout from "@layouts/Layout.astro";
+import ProfissionaisLayout from "@layouts/ProfissionaisLayout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import AnaCarolinaImg from "assets/ana-carolina.png";
 import AnaCarolina2Img from "assets/ana-carolina-2.avif";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+import { SITE_CONFIG, whatsappHelpers } from "@/config";
 
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+// Ana Carolina professional data for SEO
+const anaCarolinaProfessional = {
+  name: "Ana Carolina Simão",
+  title: "Psicóloga",
+  credentials: "(CRP 06/118379)",
+  specialties: [
+    "Psicanálise Contemporânea",
+    "Psicanálise de Grupo",
+    "Ansiedade",
+    "Transição de Carreira",
+    "Síndrome do Imigrante",
+    "Estresse Pós-Traumático",
+    "Terapia Individual",
+    "Grupos Terapêuticos"
+  ],
+  image: "/src/assets/ana-carolina.png",
+  whatsappMessage: "Olá. Gostaria de agendar uma sessão com a Ana Carolina."
+};
+
+const seoDescription = "Ana Carolina Simão - Psicóloga especialista em psicanálise contemporânea e rabiscos terapêuticos. Atendimento online e presencial em Campinas para adolescentes, adultos e idosos. Mestre pela Unicamp com 9 anos de experiência clínica.";
+
+const seoKeywords = [
+  "ana carolina simao",
+  "psicologa campinas",
+  "psicologo barao geraldo",
+  "psicanalise contemporanea",
+  "terapia ansiedade campinas",
+  "psicologo online campinas",
+  "transicao carreira terapia",
+  "sindrome imigrante terapia",
+  "estresse pos traumatico",
+  "grupos terapeuticos campinas"
+];
 ---
 
-<Layout title="Psicóloga em Barão Geraldo">
+<ProfissionaisLayout
+  title="Psicóloga em Barão Geraldo - Ana Carolina Simão"
+  description={seoDescription}
+  professional={anaCarolinaProfessional}
+  keywords={seoKeywords}
+>
   <Container>
     <Sectionhead>
       <Fragment slot="title">Ana Carolina Simão</Fragment>
@@ -40,7 +74,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 
           <div class="flex justify-center">
             <Link
-              href="https://wa.me/5519996395866?text=Olá.%20Gostaria%20de%20agendar%20uma%20sessão%20com%20a%20Ana%20Carolina."
+              href={whatsappHelpers.getWhatsappUrl("Olá. Gostaria de agendar uma sessão com a Ana Carolina.")}
               target="_blank"
               class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-6 py-3 rounded-full text-white font-semibold transition-colors text-lg"
               rel="noopener noreferrer">
@@ -128,7 +162,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </p>
           <div class="flex justify-center">
             <Link
-              href="https://wa.me/5519996395866?text=Olá.%20Gostaria%20de%20agendar%20uma%20sessão%20de%20análise%20individual%20com%20a%20Ana%20Carolina."
+              href={whatsappHelpers.getWhatsappUrl("Olá. Gostaria de agendar uma sessão de análise individual com a Ana Carolina.")}
               target="_blank"
               class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors text-sm"
               rel="noopener noreferrer">
@@ -195,4 +229,4 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </div>
     </div>
   </Container>
-</Layout>
+</ProfissionaisLayout>
