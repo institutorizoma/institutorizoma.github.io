@@ -1,0 +1,198 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import AnaCarolinaImg from "assets/ana-carolina.png";
+import AnaCarolina2Img from "assets/ana-carolina-2.avif";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="Psicóloga em Barão Geraldo">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Ana Carolina Simão</Fragment>
+      <Fragment slot="desc">Psicóloga - (CRP 06/118379)</Fragment>
+    </Sectionhead>
+
+    <!-- Call to Action Box -->
+    <div class="mx-auto max-w-4xl mt-16">
+      <div class="border-2 border-rizoma-green-lighter rounded-lg p-8 bg-rizoma-green-lighter shadow-lg">
+        <div class="text-center">
+          <div class="mb-4 inline-block bg-white text-rizoma-green border border-white px-4 py-2 rounded-lg font-semibold text-sm">
+            ATENDIMENTO ONLINE E PRESENCIAL
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-4">
+            Agende sua consulta com Ana Carolina
+          </h3>
+
+          <p class="text-lg text-white mb-6 max-w-2xl mx-auto">
+            Atendimento especializado em <strong>psicanálise contemporânea</strong> com abordagem única utilizando a técnica de <strong>rabiscos terapêuticos</strong>. Trabalho com adolescentes a partir dos 15 anos, adultos e idosos.
+          </p>
+
+          <div class="flex justify-center">
+            <Link
+              href="https://wa.me/5519996395866?text=Olá.%20Gostaria%20de%20agendar%20uma%20sessão%20com%20a%20Ana%20Carolina."
+              target="_blank"
+              class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-6 py-3 rounded-full text-white font-semibold transition-colors text-lg"
+              rel="noopener noreferrer">
+              <Icon class="text-white w-5 h-5" name="bx:bxl-whatsapp" />
+              Agendar
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meu percurso section -->
+    <div class="mx-auto max-w-4xl mt-8 p-8 bg-rizoma-bege">
+      <div class="md:flex md:flex-row md:gap-8 md:items-start">
+        <div class="md:w-80 md:flex-shrink-0 hidden md:block">
+          <div class="w-full">
+            <Picture
+              src={AnaCarolina2Img}
+              alt="Ana Carolina Simão - Meu percurso profissional"
+              sizes="320px"
+              width={320}
+              height={426}
+              class="w-full rounded-md bg-white object-cover object-center shadow-lg"
+            />
+          </div>
+        </div>
+
+        <div class="md:flex-1">
+          <h2 class="text-3xl font-bold text-rizoma-green mb-8">Meu percurso</h2>
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            Após a graduação em Psicologia (PUC - Campinas), comecei a trabalhar em recursos humanos em uma consultoria de nutrição. Como sempre tive interesse na área clínica, resolvi me dedicar aos estudos sobre uso problemático de substâncias, tema que me interessa desde a faculdade.
+          </p>
+
+          <div class="md:hidden float-left mr-4 mb-4 w-40">
+            <Picture
+              src={AnaCarolina2Img}
+              alt="Ana Carolina Simão - Meu percurso profissional"
+              sizes="160px"
+              width={160}
+              height={213}
+              class="w-full rounded-md bg-white object-cover object-center shadow-lg"
+            />
+          </div>
+
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            Meu trabalho de mestrado (Unicamp) foi sobre o uso da ayahuasca com pessoas que também estavam em processo de análise ou psicoterapia. Com essa experiência, comecei minha jornada em clínicas de atendimento ao adolescente e a trabalhar com idosos.
+          </p>
+
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            A clínica particular foi ganhando corpo quando entrei para trabalhar como psicoterapeuta de grupos no hospital-dia e ambulatório do Instituto A Casa em São Paulo. Lá retomei meu interesse na <strong>clínica ampliada</strong>, o que considero parte estruturante para meu trabalho em consultório.
+          </p>
+
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            O trabalho com grupos, a análise e a supervisão, fizeram com que apostasse em uma habilidade que tenho desde a época de escola: a de rabiscar. Quando comecei a tentar escrever sobre os casos em consultório e também durante minha análise pessoal, procurava o lápis para conseguir entrar em uma estado de proximidade com o inconsciente e sem julgamentos sobre o que iria falar, a chamada <strong>associação livre</strong>.
+          </p>
+
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            Esses rabiscos também começaram a ser feitos após atendimentos ou depois de um dia de trabalho. Foi então que quando entramos na modalidade online devido à pandemia, propus para alguns deles essa prática como exercício do livre-associar.
+          </p>
+
+          <p class="text-lg leading-relaxed text-slate-800 mb-4">
+            A prática do rabisco em minha clínica anda junto com a prática da psicanálise, com fundamentação e pesquisa que conta sobre um pouco do meu trabalho.
+          </p>
+
+          <p class="text-lg leading-relaxed text-slate-800">
+            Hoje atendo na modalidade online e presencialmente em Campinas, <strong>adolescentes a partir dos 15 anos, adultos e idosos</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Serviços section -->
+    <div class="mx-auto max-w-4xl mt-16">
+      <h2 class="text-3xl font-bold text-rizoma-green mb-8 text-center">Serviços</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Análise Individual -->
+        <div class="bg-yellow-100 border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="text-4xl mb-3">🛋️</div>
+            <h3 class="text-xl font-bold text-rizoma-green mb-2">análise individual</h3>
+          </div>
+          <p class="text-gray-700 text-center mb-4">
+            sessão de análise online ou presencial em Campinas - 50 minutos
+          </p>
+          <div class="flex justify-center">
+            <Link
+              href="https://wa.me/5519996395866?text=Olá.%20Gostaria%20de%20agendar%20uma%20sessão%20de%20análise%20individual%20com%20a%20Ana%20Carolina."
+              target="_blank"
+              class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors text-sm"
+              rel="noopener noreferrer">
+              <Icon class="text-white w-4 h-4" name="bx:bxl-whatsapp" />
+              AGENDAR
+            </Link>
+          </div>
+        </div>
+
+        <!-- Grupo Rabiscos -->
+        <div class="bg-yellow-100 border border-gray-200 rounded-lg p-6 shadow-lg">
+          <div class="text-center mb-4">
+            <div class="text-4xl mb-3">✏️</div>
+            <h3 class="text-xl font-bold text-rizoma-green mb-2">grupo rabiscos</h3>
+          </div>
+          <p class="text-gray-700 text-center mb-4">
+            grupo sobre o exercício da escuta e imaginação - 1h30min
+          </p>
+          <div class="flex justify-center">
+            <Link
+              href="https://wa.me/5519996395866?text=Olá.%20Gostaria%20de%20participar%20do%20grupo%20rabiscos%20com%20a%20Ana%20Carolina."
+              target="_blank"
+              class="bg-green-500 hover:bg-green-600 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors text-sm"
+              rel="noopener noreferrer">
+              <Icon class="text-white w-4 h-4" name="bx:bxl-whatsapp" />
+              PARTICIPAR
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formação section -->
+    <div class="mx-auto max-w-4xl my-12">
+
+      <div class="bg-white rounded-lg shadow-lg border-4 border-rizoma-green p-6">
+        <h3 class="text-xl font-bold text-rizoma-green mb-4">Formação</h3>
+
+        <div class="float-right ml-4 mb-4 w-48">
+          <Picture
+            src={AnaCarolinaImg}
+            alt="Ana Carolina Simão - Psicóloga especializada em psicanálise contemporânea e saúde mental"
+            sizes="192px"
+            width={192}
+            height={192}
+            class="w-full rounded-md bg-white object-cover object-center aspect-square shadow-sm"
+          />
+        </div>
+
+        <div class="space-y-3">
+          <p class="text-sm leading-relaxed text-slate-800">
+            Formada em Psicologia com ênfase em Clínica pela PUC-Campinas, <strong>Mestre em Ciências - Saúde Mental pela Unicamp</strong>, possui 9 anos de experiência na clínica privada e no trabalho com grupos em instituições.
+          </p>
+          <p class="text-sm leading-relaxed text-slate-800">
+            Seu percurso também passa pelo aprimoramento em saúde mental (Instituto A Casa) com casos mais graves, cursos sobre psicanálise de grupo (Instituto Gerar de Psicanálise) e aperfeiçoamento em <strong>psicanálise contemporânea.</strong>
+          </p>
+          <p class="text-sm leading-relaxed text-slate-800">
+            Trabalha em consultório particular com questões que atravessam nosso tempo e nossa cultura, atingindo principalmente <strong>adolescentes e adultos com ansiedade, transição de carreira, síndrome do imigrante e estresse pós-traumático.</strong>
+          </p>
+          <p class="text-sm leading-relaxed text-slate-800">
+            No <strong>Instituto Rizoma de Saúde Integral</strong>, Ana Carolina integra uma equipe multidisciplinar dedicada ao acolhimento e cuidado em saúde mental, com foco em um atendimento ético, qualificado e baseado em evidências científicas, artísticas e filosóficas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
