@@ -1,15 +1,15 @@
 ---
 draft: false
 title: "Bem Vindo ao Instituto Rizoma de Saúde Integral"
-snippet: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
+snippet: "Espaço dedicado ao acolhimento e cuidado em saúde mental, com foco em atendimento ético, multidisciplinar e baseado em evidências científicas. Descubra uma nova dimensão de cuidados em saúde mental."
 image: {
-    src: "/assets/",
-    alt: "frontend master"
+    src: "/assets/rizoma-horizontal.png",
+    alt: "Instituto Rizoma de Saúde Integral"
 }
 publishDate: "2025-09-25 15:39"
-category: "Tutorials"
-author: "Institudo Rizoma"
-tags: [astro, tailwindcss, frontend]
+category: "Saúde Mental"
+author: "Instituto Rizoma"
+tags: [saúde mental, psicologia, psiquiatria, terapia, cuidado integral]
 ---
 
 ## Quem Somos
