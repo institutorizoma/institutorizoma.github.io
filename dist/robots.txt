@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: http://institutorizoma.com.br/sitemap-index.xml
