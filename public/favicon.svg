@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .rizoma-green { fill: #8a9a5b; }
+      .rizoma-text { fill: #4a5a2b; }
+    </style>
+  </defs>
+  <!-- Simplified Rizoma logo for favicon -->
+  <circle cx="50" cy="50" r="45" fill="#8a9a5b" stroke="#4a5a2b" stroke-width="2"/>
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white">R</text>
+</svg>
