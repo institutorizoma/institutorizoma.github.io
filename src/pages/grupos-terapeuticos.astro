@@ -5,9 +5,78 @@ import Sectionhead from "@components/sectionhead.astro";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import { whatsappHelpers } from "@/config";
+
+// SEO data for grupos terapêuticos
+const seoTitle = "Grupos Terapêuticos Online - Vagas Abertas | Instituto Rizoma";
+const seoDescription = "Participe dos nossos grupos terapêuticos online! Vagas abertas para grupo aberto, problemáticas amorosas e usuários de psicodélicos. Inscrições abertas em Campinas.";
+const seoKeywords = [
+  "grupos terapeuticos campinas",
+  "terapia de grupo online",
+  "psicoterapia grupo campinas",
+  "grupo terapeutico aberto",
+  "terapia relacionamento amoroso",
+  "grupo psicodelicos cannabis",
+  "terapia online campinas",
+  "psicologia grupo campinas",
+  "instituto rizoma grupos",
+  "vagas grupos terapeuticos"
+];
 ---
 
-<Layout title="Grupos Terapêuticos - Instituto Rizoma">
+<Layout title={seoTitle}>
+  <Fragment slot="head">
+    <meta name="description" content={seoDescription} />
+    <meta name="keywords" content={seoKeywords.join(", ")} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDescription} />
+
+    <!-- Structured Data for Groups/Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Instituto Rizoma - Grupos Terapêuticos",
+      "description": "Grupos terapêuticos online com vagas abertas para psicoterapia de grupo, problemáticas amorosas e usuários de substâncias psicoativas",
+      "url": "https://institutorizoma.com.br/grupos-terapeuticos",
+      "telephone": "+5519996395866",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campinas",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Grupos Terapêuticos",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Grupo Terapêutico",
+            "description": "Para pessoas que gostariam de passar pela experiência de compartilhar suas questões",
+            "category": "Psicoterapia de Grupo"
+          },
+          {
+            "@type": "Offer",
+            "name": "Grupo Problemáticas no Campo Amoroso",
+            "description": "Para pessoas que estão questionando o modo como se relacionam afetivamente",
+            "category": "Terapia de Relacionamento"
+          },
+          {
+            "@type": "Offer",
+            "name": "Grupo para Usuários de Psicodélicos e Cannabis",
+            "description": "Para pessoas que usam substâncias psicoativas e gostariam de compartilhar experiências",
+            "category": "Terapia Especializada"
+          }
+        ]
+      }
+    }
+    </script>
+  </Fragment>
+
   <Container>
     <Sectionhead>
       <Fragment slot="title">Grupos Terapêuticos</Fragment>
@@ -122,8 +191,8 @@ import { whatsappHelpers } from "@/config";
       </div>
 
       <!-- Contact CTA -->
-      <div class="text-center bg-rizoma-green-lighter border-2 border-rizoma-green rounded-lg p-8">
-        <h3 class="text-2xl font-bold text-rizoma-green mb-4">
+      <div class="text-center bg-rizoma-green-lighter border-2 border-rizoma-green rounded-lg p-8 mb-4">
+        <h3 class="text-2xl font-bold text-white mb-4">
           Valores e Inscrições
         </h3>
         <p class="text-lg text-gray-800 mb-6">
