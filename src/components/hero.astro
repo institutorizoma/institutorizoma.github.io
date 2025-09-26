@@ -10,7 +10,7 @@ import { whatsappHelpers } from "@/config";
 
 <!-- Water background image - full width extending below -->
 <div
-  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-40 pointer-events-none"
+  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-75 pointer-events-none"
   style={`background-image: url(${waterImage.src}); height: 100vh; top: 0;`}
 ></div>
 
@@ -18,10 +18,25 @@ import { whatsappHelpers } from "@/config";
 <div class="fixed inset-0 bg-white/20 pointer-events-none" style="height: 100vh; top: 0;"></div>
 
 <Container>
-<main
-  class="grid lg:grid-cols-2 place-items-center min-h-screen pt-16 pb-0 md:pt-12 md:pb-0 relative z-10">
+<!-- Grupos Terapêuticos Banner -->
+<Link
+  href="/grupos-terapeuticos"
+  class="block bg-rizoma-bege hover:bg-yellow-100 text-rizoma-green border-2 border-rizoma-green py-3 md:py-6 px-4 rounded-lg mt-6 mb-6 relative z-10 transition-colors shadow-sm">
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+      <Icon class="text-rizoma-green w-8 h-8" name="bx:bx-group" />
+      <span class="font-semibold text-rizoma-green">VAGAS ABERTAS para Grupos Terapêuticos Online!</span>
+    </div>
+    <div class="bg-rizoma-green text-white px-4 py-2 rounded-full font-semibold text-sm pointer-events-none">
+      Saiba Mais
+    </div>
+  </div>
+</Link>
 
-  <div class="py-6 md:order-1 order-2 relative z-10">
+<main
+  class="grid lg:grid-cols-2 place-items-center min-h-screen pt-0 pb-16 md:pt-0 md:pb-20 relative z-10 items-center">
+
+  <div class="py-6 md:order-1 order-2 relative z-10 flex flex-col justify-center">
     <Picture
       src={heroImage}
       alt="Instituto Rizoma de Saúde Integral - Logotipo representando cuidado multidisciplinar em saúde mental"
@@ -42,7 +57,7 @@ import { whatsappHelpers } from "@/config";
       </Link>
     </div>
   </div>
-  <div class="relative">
+  <div class="relative flex flex-col justify-center">
     <div class="relative z-10">
       <div class="mb-4 inline-block bg-white text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
         ATENDIMENTO ONLINE E PRESENCIAL
@@ -51,40 +66,42 @@ import { whatsappHelpers } from "@/config";
         class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
         Descubra uma nova dimensão de cuidados em saúde mental
       </h1>
-      <p class="text-lg md:text-2xl mt-4 text-slate-900 max-w-xl">
-        No <span class="font-semibold">Instituto Rizoma de Saúde Integral</span> unimos ciência,
-        arte, cuidado e humanidade para te apoiar em sua jornada de saúde e qualidade de vida.
+      <div class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mt-4">
+        <p class="text-lg md:text-2xl text-slate-900 max-w-xl">
+          No <span class="font-semibold">Instituto Rizoma de Saúde Integral</span> unimos ciência,
+          arte, cuidado e humanidade para te apoiar em sua jornada de saúde e qualidade de vida.
 <br />
 <br />
-        Oferecemos atendimento integrado em:
-        </p>
-        <div class="flex justify-center">
-          <ul class="mt-4 space-y-2">
-            <li class="flex items-center gap-4">
-            <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
-              <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
-            </div>
-            <span class="font-bold text-2xl text-rizoma-green">Psicologia</span>
-            </li>
-            <li class="flex items-center gap-4">
+          Oferecemos atendimento integrado em:
+          </p>
+          <div class="flex justify-center">
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-4">
               <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
                 <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
               </div>
-              <span class="font-bold text-2xl text-rizoma-green">Psiquiatria</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
-                <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
-              </div>
-              <span class="font-bold text-2xl text-rizoma-green">Grupos Terapêuticos</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
-                <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
-              </div>
-              <span class="font-bold text-2xl text-rizoma-green">Medicina de Família</span>
-            </li>
-          </ul>
+              <span class="font-bold text-2xl text-rizoma-green">Psicologia</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                  <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+                </div>
+                <span class="font-bold text-2xl text-rizoma-green">Psiquiatria</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                  <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+                </div>
+                <span class="font-bold text-2xl text-rizoma-green">Grupos Terapêuticos</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0" style="background-color: #497772;">
+                  <Icon class="text-white w-4 h-4" name="bx:bxs-heart" />
+                </div>
+                <span class="font-bold text-2xl text-rizoma-green">Medicina de Família</span>
+              </li>
+            </ul>
+          </div>
         </div>
         <p class="text-lg md:text-2xl mt-4 text-slate-900 max-w-xl" style="display: none;">
       </p>
