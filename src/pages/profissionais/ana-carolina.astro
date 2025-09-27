@@ -8,6 +8,7 @@ import AnaCarolina2Img from "assets/ana-carolina-2.avif";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import { SITE_CONFIG, whatsappHelpers } from "@/config";
+import Contato from "@components/contato.astro";
 
 // Ana Carolina professional data for SEO
 const anaCarolinaProfessional = {
@@ -229,4 +230,7 @@ const seoKeywords = [
       </div>
     </div>
   </Container>
+
+  <!-- Contact Section -->
+  <Contato whatsappMessage="Olá. Gostaria de agendar uma sessão com a Ana Carolina." />
 </ProfissionaisLayout>

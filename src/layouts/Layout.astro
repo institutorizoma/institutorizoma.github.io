@@ -39,6 +39,16 @@ const makeTitle = title
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="4qA71ymVmyT2jw_p_kmKyzA7xJYQoEflHMH1NpfSaB0" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-964101777"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-964101777');
+    </script>
+
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <meta name="description" content={SITE_CONFIG.DEFAULT_META.description} />
     <meta name="keywords" content={SITE_CONFIG.DEFAULT_META.keywords} />

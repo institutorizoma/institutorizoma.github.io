@@ -2,6 +2,12 @@
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon/components";
 import { SITE_CONFIG, whatsappHelpers } from "@/config";
+
+export interface Props {
+  whatsappMessage?: string;
+}
+
+const { whatsappMessage } = Astro.props;
 ---
 
 <div id="contato" class="w-full py-16 bg-rizoma-green-lighter" style="position: relative; z-index: 10;">
@@ -13,7 +19,7 @@ import { SITE_CONFIG, whatsappHelpers } from "@/config";
           Estamos aqui pra te ajudar.
         </p>
         <div class="flex justify-center mt-6">
-          <a href={whatsappHelpers.getDefaultWhatsappUrl()} target="_blank"
+          <a href={whatsappMessage ? whatsappHelpers.getWhatsappUrl(whatsappMessage) : whatsappHelpers.getDefaultWhatsappUrl()} target="_blank"
             class="text-lg bg-green-500 hover:bg-green-600 flex gap-1 items-center justify-center p-3 rounded-full text-white font-medium transition-colors"
                 rel="noopener noreferrer">
                 AGENDAR SESSÃO<Icon class="text-white w-6 h-6" name="bx:bxl-whatsapp" />
@@ -25,10 +31,6 @@ import { SITE_CONFIG, whatsappHelpers } from "@/config";
             <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
               <Icon class="text-white/70 w-4 h-4" name="uil:envelope" />
               <a href={`mailto:${SITE_CONFIG.EMAIL}`}>{SITE_CONFIG.EMAIL}</a>
-            </div>
-            <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
-              <Icon class="text-white/70 w-4 h-4" name="uil:phone" />
-              <a href="tel:+55 19 992194683">(19) 99219 4683</a>
             </div>
             <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
               <Icon class="text-white/70 w-4 h-4" name="uil:phone" />
